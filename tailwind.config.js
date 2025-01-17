@@ -1,7 +1,9 @@
 module.exports = {
-  darkMode: 'class', // Esto permite controlar el tema a través de una clase 'dark' en el elemento html
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
