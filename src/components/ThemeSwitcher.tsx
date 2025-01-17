@@ -1,22 +1,25 @@
-import React from 'react';
+// src/components/ThemeSwitcher.tsx
+import React, { useState } from 'react';
 
-interface ThemeSwitcherProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
+const ThemeSwitcher: React.FC = () => {
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ darkMode, toggleDarkMode }) => {
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+    if (!darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
   return (
-    <div className="flex justify-end mb-4">
-      <button
-        onClick={toggleDarkMode}
-        className={`px-4 py-2 rounded ${
-          darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'
-        }`}
-      >
-        {darkMode ? 'Modo Claro' : 'Modo Oscuro'}
-      </button>
-    </div>
+    <button
+      className="fixed top-4 right-4 p-2 bg-gray-800 text-white rounded-full"
+      onClick={toggleTheme}
+    >
+      {darkMode ? '🌙' : '☀️'}
+    </button>
   );
 };
 

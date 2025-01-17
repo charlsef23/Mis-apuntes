@@ -1,8 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'], // Asegúrate de que las rutas estén configuradas correctamente
+  darkMode: 'class', // Esto permite controlar el tema a través de una clase 'dark' en el elemento html
   theme: {
     extend: {},
   },
   plugins: [],
-};
+}
